@@ -102,3 +102,8 @@ VERSION=v2.0
 EOL
 
 echo "Configuration complete. The .env file has been updated."
+
+echo "Starting Helaport with pm2"
+npm i -g pm2
+pm2 start index.js
+echo "Started Helaport with pm2 Successfully"
