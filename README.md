@@ -31,9 +31,10 @@
 - NodeJS
 - Git
 - npm
+- curl
 
 ## Then Run the Following Command 
 
-```bash
-git clone https://github.com/MrStateGaming1/panel.git && cd panel && npm install && npm run seed && npm run createUser && node .
+```bash 
+bash curl -s (https://raw.githubusercontent.com/ma4z/Helaport-Installer/main/install.sh)
 ```
