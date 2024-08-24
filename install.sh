@@ -10,15 +10,16 @@ fi
 if ! command -v fnm &> /dev/null
 then
     echo "Node.js is not installed. Installing fnm (Fast Node Manager)..."
-    curl -fsSL https://fnm.vercel.app/install | bash
-    source ~/.bashrc
-    fnm use --install-if-missing 20
+    sudo apt update
+    sudo apt install -y curl software-properties-common
+    curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
+    sudo apt-get install nodejs -y 
 fi
 
 # Clone the repository
-echo "Cloning Helaport repository..."
-git clone https://github.com/MrStateGaming1/Helaport.git
-cd Helaport
+echo "Cloning HydrenDashboard repository..."
+git clone https://github.com/hydren-dev/HydrenDashboard.git
+cd HydrenDashboard
 
 # Install dependencies
 echo "Installing dependencies..."
