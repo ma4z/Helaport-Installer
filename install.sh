@@ -9,7 +9,7 @@ fi
 
 if ! command -v fnm &> /dev/null
 then
-    echo "Node.js is not installed. Installing fnm (Fast Node Manager)..."
+    echo "Node.js is not installed. Installing it"
     sudo apt update
     sudo apt install -y curl software-properties-common
     curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
@@ -99,7 +99,7 @@ DATABASE_COST=250
 ALLOCATION_COST=500
 
 # Developer
-VERSION=v2.0
+VERSION=v4.0
 EOL
 
 echo "Configuration complete. The .env file has been updated."
