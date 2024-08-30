@@ -1,4 +1,4 @@
-# Helaport Installer
+# HydrenDashboard  Installer
 # Works on
 
 ### Supported operating systems
@@ -36,5 +36,5 @@
 ## Then Run the Following Command 
 
 ```bash 
-bash curl -s (https://raw.githubusercontent.com/ma4z/Helaport-Installer/main/install.sh)
+bash curl -s (https://raw.githubusercontent.com/hydren-dev/HydrenDashboard-Installer/main/install.sh)
 ```
