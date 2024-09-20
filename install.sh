@@ -46,7 +46,7 @@ else
 fi
 
 read -p "APP_NAME: " APP_NAME
-read -p "ADMIN_USERS: " ADMIN_USERS
+read -p "ADMIN_USERS: (Seprate with ,)" ADMIN_USERS
 read -p "APP_PORT: " APP_PORT
 
 # Write to .env file
@@ -106,5 +106,5 @@ echo "Configuration complete. The .env file has been updated."
 
 echo "Starting HydrenDashboard with pm2"
 npm i -g pm2
-pm2 start index.js
+pm2 start index.js --name Dashboard
 echo "Started HydrenDashboard with pm2 Successfully"
