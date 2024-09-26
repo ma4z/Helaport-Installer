@@ -9,7 +9,7 @@ fi
 
 if ! command -v fnm &> /dev/null
 then
-    echo "Node.js is not installed. Installing it"
+    echo "Node.js is not installed.. (Installing Nodejs 20x)"
     sudo apt update
     sudo apt install -y curl software-properties-common
     curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
@@ -46,8 +46,10 @@ else
 fi
 
 read -p "APP_NAME: " APP_NAME
-read -p "ADMIN_USERS: (Seprate with ,)" ADMIN_USERS
+read -p "ADMIN_USERS: " ADMIN_USERS
 read -p "APP_PORT: " APP_PORT
+
+read -p "HYDREN_API_KEY: (Dont SET The Skyport API Key You can set it any for example : hydren_key_1234567890)" API_KEY
 
 # Write to .env file
 cat <<EOL > .env
@@ -83,6 +85,9 @@ APP_PORT=$APP_PORT
 # Admin
 ADMIN_USERS=$ADMIN_USERS
 
+# Api
+API_KEY=$API_KEY
+
 # Logs
 LOGS_PATH=./storage/logs/services.log
 LOGS_ERROR_PATH=./storage/logs/errors.log
@@ -99,12 +104,12 @@ DATABASE_COST=250
 ALLOCATION_COST=500
 
 # Developer
-VERSION=v4.0
+VERSION=5.0
 EOL
 
 echo "Configuration complete. The .env file has been updated."
 
 echo "Starting HydrenDashboard with pm2"
 npm i -g pm2
-pm2 start index.js --name Dashboard
+pm2 start index.js
 echo "Started HydrenDashboard with pm2 Successfully"
